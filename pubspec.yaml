@@ -24,7 +24,6 @@ dependencies:
   # Audio
   just_audio: ^0.9.36
   audio_waveforms: ^1.0.5
-  ffmpeg_kit_flutter_full_gpl: ^6.0.3
 
   # UI
   flutter_animate: ^4.5.0
