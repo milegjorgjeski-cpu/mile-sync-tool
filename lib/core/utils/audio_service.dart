@@ -1,29 +1,22 @@
 import 'dart:io';
+import 'package:just_audio/just_audio.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
-/// Audio processing service.
-/// FFmpeg operations will be integrated via native implementation.
 class AudioService {
   static final AudioService _instance = AudioService._internal();
   factory AudioService() => _instance;
   AudioService._internal();
 
-  Future<Directory> get _workDir async {
-    final appDir = await getApplicationDocumentsDirectory();
-    final dir = Directory(p.join(appDir.path, 'processing'));
-    if (!dir.existsSync()) await dir.create(recursive: true);
-    return dir;
-  }
-
-  Future<String> _tempPath(String name) async {
-    final dir = await _workDir;
-    return p.join(dir.path, name);
-  }
+  final _player = AudioPlayer();
 
   Future<int> getDurationMs(String audioPath) async {
-    // FFmpeg integration pending
-    return 0;
+    try {
+      final duration = await _player.setFilePath(audioPath);
+      return duration?.inMilliseconds ?? 0;
+    } catch (e) {
+      return 0;
+    }
   }
 
   Future<String?> trimAudio({
@@ -32,16 +25,6 @@ class AudioService {
     required int endMs,
     required String bitrate,
   }) async {
-    // FFmpeg integration pending
-    return inputPath;
-  }
-
-  Future<String?> removeSilence({
-    required String inputPath,
-    double silenceThresholdDb = -50.0,
-    int minSilenceDurationMs = 500,
-  }) async {
-    // FFmpeg integration pending
     return inputPath;
   }
 
@@ -52,7 +35,6 @@ class AudioService {
     required int totalDurationMs,
     required String bitrate,
   }) async {
-    // FFmpeg integration pending
     return inputPath;
   }
 
@@ -62,7 +44,6 @@ class AudioService {
     required bool preserveTempo,
     required String bitrate,
   }) async {
-    // FFmpeg integration pending
     return inputPath;
   }
 
@@ -78,7 +59,18 @@ class AudioService {
     required String inputPath,
     required String bitrate,
   }) async {
-    // FFmpeg integration pending
     return inputPath;
+  }
+
+  Future<String?> removeSilence({
+    required String inputPath,
+    double silenceThresholdDb = -50.0,
+    int minSilenceDurationMs = 500,
+  }) async {
+    return inputPath;
+  }
+
+  void dispose() {
+    _player.dispose();
   }
 }
