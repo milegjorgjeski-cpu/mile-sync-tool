@@ -5,9 +5,7 @@
 
     <application
         android:label="Mile Sync"
-        android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
-        android:largeHeap="true">
+        android:name="${applicationName}">
 
         <activity
             android:name=".MainActivity"
@@ -25,6 +23,5 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2"/>
-
     </application>
 </manifest>
