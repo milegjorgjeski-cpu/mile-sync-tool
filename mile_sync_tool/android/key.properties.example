@@ -1,5 +1,0 @@
-# Копирај го ова во android/key.properties (НЕ го commit-увај!)
-storePassword=ТВОЈАТА_ЛОЗИНКА
-keyPassword=ТВОЈАТА_KEY_ЛОЗИНКА
-keyAlias=mile_sync
-storeFile=../mile_sync_keystore.jks
