@@ -21,7 +21,7 @@ android {
     defaultConfig {
         applicationId "com.milesync.mile_sync_tool"
         minSdkVersion 24
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0.0"
         multiDexEnabled true
@@ -41,6 +41,6 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.0"
     implementation 'androidx.multidex:multidex:2.0.1'
 }
