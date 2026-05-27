@@ -1,0 +1,58 @@
+name: mile_sync_tool
+description: Offline Balkan backing track & karaoke preparation tool for live performers.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
+
+  # File handling
+  file_picker: ^6.1.1
+  path_provider: ^2.1.2
+  path: ^1.9.0
+  share_plus: ^7.2.1
+  permission_handler: ^11.3.0
+
+  # Audio
+  just_audio: ^0.9.36
+  audio_waveforms: ^1.0.5
+  ffmpeg_kit_flutter_audio: ^6.0.3
+
+  # UI
+  flutter_animate: ^4.5.0
+  google_fonts: ^6.1.0
+  gap: ^3.0.1
+
+  # Storage
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
+
+  # Utilities
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  intl: ^0.19.0
+  collection: ^1.18.0
+  uuid: ^4.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.8
+  freezed: ^2.4.7
+  json_serializable: ^6.7.1
+  riverpod_generator: ^2.3.9
+  hive_generator: ^2.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
